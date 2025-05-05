@@ -9,6 +9,8 @@
 
 namespace PortfolioWebsite
 {
+
+
     public partial class Projects
     {
 
@@ -20,15 +22,6 @@ namespace PortfolioWebsite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Project2Image;
-
-        /// <summary>
-        /// Project2Link control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Project2Link;
 
         /// <summary>
         /// Project2Github control.
@@ -47,15 +40,6 @@ namespace PortfolioWebsite
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Project3Image;
-
-        /// <summary>
-        /// Project3Link control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink Project3Link;
 
         /// <summary>
         /// Project3Github control.

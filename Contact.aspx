@@ -20,11 +20,11 @@
                         <div class="contact-info">
                             <div class="mb-2">
                                 <i class="fas fa-envelope"></i>
-                                <asp:HyperLink ID="EmailLink" runat="server" NavigateUrl="mailto:kanthonyfelker@gmail.com">kanthonyfelker@gmail.com</asp:HyperLink>
+                                <asp:HyperLink ID="EmailLink" runat="server" NavigateUrl="mailto:kevin.portfoliowebsite@gmail.com">kevin.portfoliowebsite@gmail.com</asp:HyperLink>
                             </div>
                             <div class="mb-2">
                                 <i class="fab fa-github"></i>
-                                <asp:HyperLink ID="GithubLink" runat="server" NavigateUrl="https://github.com/felker12" Target="_blank">GitHub Profile</asp:HyperLink>
+                                <asp:HyperLink ID="GithubLink" runat="server" NavigateUrl="https://github.com/felker12" Target="_blank">GitHub</asp:HyperLink>
                             </div>
                         </div>
                     </div>

@@ -13,7 +13,6 @@ namespace PortfolioWebsite
 
     public partial class Contact
     {
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
 
         /// <summary>
         /// EmailLink control.

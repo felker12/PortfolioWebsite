@@ -10,9 +10,7 @@ namespace PortfolioWebsite
             if (!IsPostBack)
             {
                 // Initialize project links
-                Project2Link.NavigateUrl = "#";
                 Project2Github.NavigateUrl = "https://github.com/felker12/skeletons-adventure";
-                Project3Link.NavigateUrl = "#";
                 Project3Github.NavigateUrl = "https://github.com/felker12/TimePunch";
             }
         }

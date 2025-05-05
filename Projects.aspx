@@ -18,7 +18,6 @@
                             <span class="badge bg-success">Git</span>
                         </div>
                         <div>
-                            <asp:HyperLink ID="Project2Link" runat="server" CssClass="btn btn-primary btn-sm" NavigateUrl="#" Text="View Project" Target="_blank" />
                             <asp:HyperLink ID="Project2Github" runat="server" CssClass="btn btn-secondary btn-sm" NavigateUrl="https://github.com/felker12/skeletons-adventure" Text="GitHub" Target="_blank" />
                         </div>
                     </div>
@@ -38,7 +37,6 @@
                             <span class="badge bg-success">UI/UX</span>
                         </div>
                         <div>
-                            <asp:HyperLink ID="Project3Link" runat="server" CssClass="btn btn-primary btn-sm" NavigateUrl="#" Text="View Project" Target="_blank" />
                             <asp:HyperLink ID="Project3Github" runat="server" CssClass="btn btn-secondary btn-sm" NavigateUrl="https://github.com/felker12/TimePunch" Text="GitHub" Target="_blank" />
                         </div>
                     </div>
