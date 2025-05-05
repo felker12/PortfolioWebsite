@@ -17,26 +17,30 @@
             
             <div class="col-md-8">
                 <h3>Professional Summary</h3>
-                <p>
-                    Technically skilled and highly motivated IT professional with a strong foundation in software development. 
-                    Looking to leverage a blend of leadership and technical experience in a developer role. 
-                    Bringing a decade of experience in operational leadership. Demonstrates a proactive approach to problem-solving, 
-                    excellent attention to detail, and the ability to adapt quickly in fast-paced environments.
-                </p>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            Technically skilled and highly motivated IT professional with a strong foundation in software development. 
+                            Looking to leverage a blend of leadership and technical experience in a developer role. 
+                            Bringing a decade of experience in operational leadership. Demonstrates a proactive approach to problem-solving, 
+                            excellent attention to detail, and the ability to adapt quickly in fast-paced environments.
+                        </p>
+                    </div>
+                </div>
                 
                 <h3 class="mt-4">Education</h3>
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Bachelor of Science in Computer Information Systems</h5>
                         <h6 class="card-subtitle mb-2 text-muted">DeVry University, Federal Way, WA</h6>
-                        <p class="card-text">GPA: 3.7</p>
+                        <p class="card-text">GPA: 3.76</p>
                     </div>
                 </div>
                 
                 <h3 class="mt-4">Professional Experience</h3>
                 <div class="card mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Operations Technology Specialist / Shift Manager</h5>
+                        <h5 class="card-title">Operations Technology Specialist (6y)/ Shift Manager (7y)</h5>
                         <h6 class="card-subtitle mb-2 text-muted">McDonald's, Brazil, IN</h6>
                         <p class="card-text">2015 - Present</p>
                         <ul>

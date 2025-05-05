@@ -102,15 +102,19 @@
                                 </asp:RequiredFieldValidator>
                             </div>
 
-                            <asp:Button ID="SubmitButton" runat="server" Text="Send Message" CssClass="btn btn-primary" OnClick="SubmitButton_Click" ValidationGroup="ContactForm" />
+                            <div class="mt-3">
+                                <asp:Button ID="SubmitButton" runat="server" Text="Send Message" CssClass="btn btn-primary w-100" OnClick="SubmitButton_Click" ValidationGroup="ContactForm" />
+                            </div>
                             
-                            <asp:Label ID="SuccessMessage" runat="server" CssClass="alert alert-success mt-2" Visible="false">
-                                Your message has been sent successfully!
-                            </asp:Label>
-                            
-                            <asp:Label ID="ErrorMessage" runat="server" CssClass="alert alert-danger mt-2" Visible="false">
-                                There was an error sending your message. Please try again later.
-                            </asp:Label>
+                            <div class="mt-3">
+                                <asp:Label ID="SuccessMessage" runat="server" CssClass="alert alert-success d-block mt-2" Visible="false">
+                                    Your message has been sent successfully!
+                                </asp:Label>
+                                
+                                <asp:Label ID="ErrorMessage" runat="server" CssClass="alert alert-danger d-block mt-2" Visible="false">
+                                    There was an error sending your message. Please try again later.
+                                </asp:Label>
+                            </div>
                         </div>
                     </div>
                 </div>

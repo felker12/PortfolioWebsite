@@ -1,5 +1,6 @@
 using System;
 using System.Net.Mail;
+using System.Net;
 using System.Configuration;
 
 namespace PortfolioWebsite
@@ -17,6 +18,10 @@ namespace PortfolioWebsite
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
+            // Hide any previously shown messages
+            SuccessMessage.Visible = false;
+            ErrorMessage.Visible = false;
+
             if (Page.IsValid)
             {
                 try
@@ -40,10 +45,13 @@ namespace PortfolioWebsite
                             smtp.Host = ConfigurationManager.AppSettings["SmtpServer"];
                             smtp.Port = int.Parse(ConfigurationManager.AppSettings["SmtpPort"]);
                             smtp.EnableSsl = bool.Parse(ConfigurationManager.AppSettings["SmtpEnableSsl"]);
-                            smtp.Credentials = new System.Net.NetworkCredential(
+                            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                            smtp.UseDefaultCredentials = false;
+                            smtp.Credentials = new NetworkCredential(
                                 ConfigurationManager.AppSettings["SmtpUsername"],
                                 ConfigurationManager.AppSettings["SmtpPassword"]
                             );
+                            smtp.Timeout = 20000; // 20 seconds timeout
 
                             smtp.Send(mail);
                         }
@@ -57,16 +65,15 @@ namespace PortfolioWebsite
 
                     // Show success message
                     SuccessMessage.Visible = true;
-                    ErrorMessage.Visible = false;
                 }
                 catch (Exception ex)
                 {
                     // Log the error (implement proper logging in production)
                     System.Diagnostics.Debug.WriteLine($"Error sending email: {ex.Message}");
 
-                    // Show error message
+                    // Set a more descriptive error message
+                    ErrorMessage.Text = $"There was an error sending your message: {ex.Message}";
                     ErrorMessage.Visible = true;
-                    SuccessMessage.Visible = false;
                 }
             }
         }
