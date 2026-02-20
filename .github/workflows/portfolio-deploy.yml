@@ -22,8 +22,7 @@ jobs:
 
       - name: Build and Publish
         run: |
-          msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:PublishUrl="${{ github.workspace }}\publish" /p:WebPublishMethod=FileSystem /p:PackageLocation="${{ github.workspace }}\publish"
-
+            msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:PublishUrl="${{ github.workspace }}\publish\\" /p:WebPublishMethod=FileSystem /p:PackageLocation="${{ github.workspace }}\publish"
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
