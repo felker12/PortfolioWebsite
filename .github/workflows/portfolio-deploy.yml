@@ -1,40 +1,56 @@
-name: Deploy Legacy .NET Portfolio to Azure
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy ASP app to Azure Web App - PortfolioWebsite20250804050941
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - master
+  workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: windows-latest
+    permissions:
+      contents: read #This is required for actions/checkout
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: List workspace files
-        run: dir "${{ github.workspace }}"
-
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v2
+      - name: Setup MSBuild path
+        uses: microsoft/setup-msbuild@v1.0.2
 
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1
+        uses: NuGet/setup-nuget@v1.0.5
 
-      - name: Restore Packages
-        run: nuget restore PortfolioWebsite.sln
+      - name: Restore NuGet packages
+        run: nuget restore
 
-      - name: Build Solution
-        run: msbuild PortfolioWebsite.sln /t:Build /p:Configuration=Release
+      - name: Publish to folder
+        run: msbuild /nologo /verbosity:m /t:Build /t:pipelinePreDeployCopyAllFilesToOneFolder /p:_PackageTempDir="\published\"
 
-      - name: Publish Web Project
-        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:publishUrl="${{ github.workspace }}\publish\\"
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: ASP-app
+          path: '/published/**'
 
-      - name: List published files
-        run: Get-ChildItem -Path "${{ github.workspace }}\publish" -Recurse -ErrorAction SilentlyContinue
-
+  deploy:
+    runs-on: windows-latest
+    needs: build
+    
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: ASP-app
+      
       - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'PortfolioWebsite20250804050941'
-          publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: '${{ github.workspace }}\publish\**'
+          slot-name: 'Production'
+          package: .
+          publish-profile: ${{ secrets.__publishingprofilesecretname__ }}
