@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\KevinFelker - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\PortfolioWebsite20250804050941 - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
