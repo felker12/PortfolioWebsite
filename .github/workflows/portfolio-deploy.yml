@@ -25,7 +25,10 @@ jobs:
 
       - name: Build and Publish
         run: |
-          msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
+          msbuild PortfolioWebsite.sln /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
+
+      - name: List published files
+        run: dir "${{ github.workspace }}\publish"
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
