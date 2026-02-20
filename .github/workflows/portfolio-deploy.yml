@@ -27,10 +27,10 @@ jobs:
         run: msbuild PortfolioWebsite.sln /t:Build /p:Configuration=Release
 
       - name: Publish Web Project
-        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
+        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:publishUrl="${{ github.workspace }}\publish\\"
 
       - name: List published files
-        run: dir "${{ github.workspace }}\publish"
+        run: Get-ChildItem -Path "${{ github.workspace }}\publish" -Recurse -ErrorAction SilentlyContinue
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
