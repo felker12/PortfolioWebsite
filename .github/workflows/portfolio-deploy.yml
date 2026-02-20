@@ -15,12 +15,12 @@ jobs:
         with:
           dotnet-version: '8.0.x' 
 
-      - name: Publish
-        run: dotnet publish PortfolioWebsite.csproj -c Release -o ./publish
+      - name: Build and Publish
+        run: dotnet publish **/PortfolioWebsite.csproj -c Release -o ${{ github.workspace }}/publish
 
       - name: Deploy to Azure
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'PortfolioWebsite20250804050941' # Your specific Azure app name
           publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: ./publish
+          package: ${{ github.workspace }}/publish
