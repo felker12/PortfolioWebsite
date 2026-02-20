@@ -2,7 +2,7 @@ name: Deploy Portfolio to Azure
 
 on:
   push:
-    branches: [ main ] # Triggers whenever you update your site code
+    branches: [ master ] # Triggers whenever you update your site code
 
 jobs:
   build-and-deploy:
