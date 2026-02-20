@@ -119,6 +119,7 @@
     <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".github\workflows\portfolio-deploy.yml" />
     <None Include="Properties\PublishProfiles\KevinFelker - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\PortfolioWebsite20250804050941 - Web Deploy.pubxml" />
   </ItemGroup>
