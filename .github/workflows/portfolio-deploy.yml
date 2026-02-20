@@ -23,9 +23,11 @@ jobs:
       - name: Restore Packages
         run: nuget restore PortfolioWebsite.sln
 
-      - name: Build and Publish
-        run: |
-          msbuild PortfolioWebsite.sln /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
+      - name: Build Solution
+        run: msbuild PortfolioWebsite.sln /t:Build /p:Configuration=Release
+
+      - name: Publish Web Project
+        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
 
       - name: List published files
         run: dir "${{ github.workspace }}\publish"
