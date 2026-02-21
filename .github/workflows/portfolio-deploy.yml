@@ -24,11 +24,12 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore
 
-      - name: Build with publish enabled
+      - name: Build and publish
         run: msbuild PortfolioWebsite.csproj `
-          /p:Configuration=Release `
-          /p:DeployOnBuild=true `
-          /p:WebPublishMethod=FileSystem
+            /p:Configuration=Release `
+            /p:DeployOnBuild=true `
+            /p:WebPublishMethod=FileSystem `
+            /p:PublishUrl=${{ github.workspace }}\published
 
       - name: List published output
         run: Get-ChildItem -Recurse bin\Release
