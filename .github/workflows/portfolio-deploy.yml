@@ -40,4 +40,5 @@ jobs:
         with:
           app-name: 'PortfolioWebsite20250804050941'
           publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: '${{ github.workspace }}\publish'
+          # This path comes directly from your build logs:
+          package: '${{ github.workspace }}\obj\Release\Package\PackageTmp'
