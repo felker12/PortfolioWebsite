@@ -28,12 +28,16 @@ jobs:
             /p:Configuration=Release `
             /p:DeployOnBuild=true `
             /p:WebPublishMethod=FileSystem `
-            /p:PublishUrl="${{ github.workspace }}\publish"
+            /p:PublishUrl="${{ github.workspace }}\publish" `
+            /p:DeleteExistingFiles=True `
+            /p:PackageAsSingleFile=False
+
+      - name: List published output
+        run: Get-ChildItem -Recurse ${{ github.workspace }}\publish
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'PortfolioWebsite20250804050941'
           publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          # This tells Azure to look inside the nested folder created by MSBuild
-          package: '${{ github.workspace }}\publish\**'
+          package: '${{ github.workspace }}\publish'
