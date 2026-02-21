@@ -7,7 +7,9 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
+                    <%-- Commented out until an actual picture is ready to be added 
                     <asp:Image ID="ProfileImage" runat="server" CssClass="card-img-top" ImageUrl="~/Content/Images/profile-placeholder.jpg" AlternateText="Profile Picture" />
+                    --%>
                     <div class="card-body">
                         <h3 class="card-title">Kevin Felker</h3>
                         <p class="card-text">IT Professional & Software Developer</p>
@@ -41,7 +43,7 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <h5 class="card-title">Operations Technology Specialist (6y)/ Shift Manager (7y)</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">McDonald's, Brazil, IN</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Jedele Enterprises, Brazil, IN</h6>
                         <p class="card-text">2015 - Present</p>
                         <ul>
                             <li>Provided on-site technical support by maintaining, installing, and repairing operations technology systems, resulting in increased uptime of operations</li>
