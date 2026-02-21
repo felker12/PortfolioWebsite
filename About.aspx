@@ -10,7 +10,7 @@
                     <asp:Image ID="ProfileImage" runat="server" CssClass="card-img-top" ImageUrl="~/Content/Images/profile-placeholder.jpg" AlternateText="Profile Picture" />
                     <div class="card-body">
                         <h3 class="card-title">Kevin Felker</h3>
-                        <p class="card-text">IT Professional & Software Developer TEST</p>
+                        <p class="card-text">IT Professional & Software Developer</p>
                     </div>
                 </div>
             </div>
