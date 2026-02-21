@@ -32,31 +32,3 @@ jobs:
         with:
           name: ASP-app
           path: published/**
-
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: ASP-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'PortfolioWebsite20250804050941'
-          slot-name: 'Production'
-          package: .
-
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'PortfolioWebsite20250804050941'
-          publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: '${{ github.workspace }}\publish'
