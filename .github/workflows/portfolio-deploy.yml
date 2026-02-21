@@ -27,8 +27,11 @@ jobs:
       - name: Publish to folder
         run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\published"
 
+      - name: List files after publish
+        run: dir ${{ github.workspace }} /s
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: ASP-app
-          path: published/**
+          path: ${{ github.workspace }}/published/
