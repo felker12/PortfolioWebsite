@@ -33,6 +33,7 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: PortfolioWebsite20250804050941
+          app-name: 'PortfolioWebsite20250804050941'
           publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: ${{ github.workspace }}\publish
+          # This tells Azure to look inside the nested folder created by MSBuild
+          package: '${{ github.workspace }}\publish\**'
