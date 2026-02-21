@@ -26,11 +26,11 @@ jobs:
 
       - name: Publish to folder
         run: msbuild PortfolioWebsite.csproj `
-              /p:Configuration=Release `
-              /p:DeployOnBuild=true `
-              /p:WebPublishMethod=FileSystem `
-              /p:PublishUrl=${{ github.workspace }}/published `
-              /t:WebPublish
+           /p:Configuration=Release `
+           /p:DeployOnBuild=true `
+           /p:WebPublishMethod=FileSystem `
+           /p:DeleteExistingFiles=true `
+           /p:PublishUrl=${{ github.workspace }}/published
 
       - name: List files after publish
         run: Get-ChildItem -Recurse ${{ github.workspace }}/published
