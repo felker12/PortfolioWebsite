@@ -24,19 +24,17 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore
 
-      - name: Publish to folder
+      - name: Build with publish enabled
         run: msbuild PortfolioWebsite.csproj `
-           /p:Configuration=Release `
-           /p:DeployOnBuild=true `
-           /p:WebPublishMethod=FileSystem `
-           /p:DeleteExistingFiles=true `
-           /p:PublishUrl=${{ github.workspace }}/published
+          /p:Configuration=Release `
+          /p:DeployOnBuild=true `
+          /p:WebPublishMethod=FileSystem
 
-      - name: List files after publish
-        run: Get-ChildItem -Recurse ${{ github.workspace }}/published
+      - name: List published output
+        run: Get-ChildItem -Recurse bin\Release
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ASP-app
-          path: ${{ github.workspace }}/published/
+          path: bin/Release/_PublishedWebsites/PortfolioWebsite/
