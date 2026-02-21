@@ -1,31 +1,32 @@
-#Build and deploy ASP app to Azure Web App - PortfolioWebsite20250804050941
+name: Deploy Legacy .NET Portfolio to Azure
 
 on:
   push:
-    branches:
-      - master
-  workflow_dispatch:
+    branches: [ master ]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: windows-latest
-    permissions:
-      contents: read
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup MSBuild path
+      - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
       - name: Setup NuGet
-        uses: NuGet/setup-nuget@v2
+        uses: NuGet/setup-nuget@v1
 
-      - name: Restore NuGet packages
-        run: nuget restore
+      - name: Restore Packages
+        run: nuget restore PortfolioWebsite.sln
 
-      - name: Publish to folder
-        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\published"
+      - name: Build and Publish
+        run: |
+          msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\publish"
 
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v4
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'PortfolioWebsite20250804050941'
+          publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
+          package: '${{ github.workspace }}\publish'
