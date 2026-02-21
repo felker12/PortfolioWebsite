@@ -28,13 +28,15 @@ jobs:
         run: nuget restore
 
       - name: Publish to folder
-        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:PublishDir="${{ github.workspace }}\published"
+        # Changed PublishDir to OutDir and ensured a trailing backslash
+        run: msbuild PortfolioWebsite.csproj /p:Configuration=Release /p:DeployOnBuild=true /p:WebPublishMethod=FileSystem /p:OutDir="${{ github.workspace }}\published\\"
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: ASP-app
-          path: published/**
+          # Pointing directly to the subfolder MSBuild creates for legacy web apps
+          path: ${{ github.workspace }}\published\_PublishedWebsites\PortfolioWebsite
 
   deploy:
     runs-on: windows-latest
