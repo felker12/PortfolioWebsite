@@ -62,7 +62,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\GameSample.png" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\TimeClock_ClockIn.png" />
+    <Content Include="Content\TimeClock_LogIn.png" />
     <Content Include="Default.aspx" />
     <Content Include="Projects.aspx" />
     <Content Include="Skills.aspx" />
