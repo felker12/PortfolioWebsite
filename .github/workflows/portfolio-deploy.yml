@@ -22,19 +22,17 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore
 
-      - name: Build and Publish
+      - name: Build and Publish to Folder
         run: |
           msbuild PortfolioWebsite.csproj `
             /p:Configuration=Release `
             /p:DeployOnBuild=true `
-            /p:WebPublishMethod=Package `
-            /p:PackageAsSingleFile=true `
-            /p:SkipInvalidConfigurations=true `
-            /p:PackageLocation="${{ github.workspace }}\WebApp.zip"
+            /p:WebPublishMethod=FileSystem `
+            /p:PublishUrl="${{ github.workspace }}\publish"
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
           app-name: PortfolioWebsite20250804050941
           publish-profile: ${{ secrets.AZURE_PORTFOLIO_PUBLISH_PROFILE }}
-          package: ${{ github.workspace }}\WebApp.zip
+          package: ${{ github.workspace }}\publish
