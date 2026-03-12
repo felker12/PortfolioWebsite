@@ -24,6 +24,29 @@
                 </div>
             </div>
 
+            <!-- Portfolio Creator -->
+            <div class="col-md-6">
+                <div class="card project-card h-100">
+                    <asp:Image ID="Image1" runat="server" CssClass="card-img-top" ImageUrl="~/Content/PortfolioCreator.png" AlternateText="Porftolio Creator" />
+                    <div class="card-body p-3">
+                        <h5 class="card-title mb-2">Portfolio Creator</h5>
+                        <p class="card-text mb-2">Designed and built a full-stack portfolio creation tool using .NET Aspire's cloud-native architecture and a React front-end, generating ready-to-use HTML files for easy deployment.</p>
+                        <div class="tech-stack mb-2">
+                            <span class="badge bg-primary">C#</span>
+                            <span class="badge bg-secondary">.Net Aspire</span>
+                            <span class="badge bg-success">React</span>
+                            <span class="badge bg-info">Azure</span>
+                            <span class="badge bg-secondary">HTML/CSS</span>
+                            <span class="badge bg-success">REST API</span>
+                        </div>
+                        <div>
+                            <asp:HyperLink ID="Project4Github" runat="server" CssClass="btn btn-secondary btn-sm" NavigateUrl="https://github.com/felker12/PortfolioSiteCreator" Text="GitHub" Target="_blank" />
+                            <asp:HyperLink ID="DemoLink" runat="server" CssClass="btn btn-secondary btn-sm" NavigateUrl="https://portfoliocreator-hwemcghrh5axesey.canadacentral-01.azurewebsites.net/" Text="Demo" Target="_blank" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Time Punch Application -->
             <div class="col-md-6">
                 <div class="card project-card h-100">
@@ -58,6 +81,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </asp:Content> 

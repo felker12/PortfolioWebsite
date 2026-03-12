@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace PortfolioWebsite
 {
@@ -9,9 +8,6 @@ namespace PortfolioWebsite
         {
             if (!IsPostBack)
             {
-                // Initialize project links
-                Project2Github.NavigateUrl = "https://github.com/felker12/skeletons-adventure";
-                Project3Github.NavigateUrl = "https://github.com/felker12/TimePunch";
             }
         }
     }
