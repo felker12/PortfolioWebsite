@@ -26,11 +26,6 @@ namespace PortfolioWebsite
             {
                 try
                 {
-                    string pwd = ConfigurationManager.AppSettings["SmtpPassword"];
-                    ErrorMessage.Text = $"Password length: {pwd?.Length ?? 0}";
-                    ErrorMessage.Visible = true;
-                    return;
-
                     // Create the email message
                     using (MailMessage mail = new MailMessage())
                     {
