@@ -140,7 +140,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50000</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50000/</IISUrl>
+          <IISUrl>http://localhost:54561/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
