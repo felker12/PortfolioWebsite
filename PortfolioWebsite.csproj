@@ -63,6 +63,7 @@
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\GameSample.png" />
+    <Content Include="Content\PortfolioCreator.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\TimeClock_ClockIn.png" />
     <Content Include="Content\TimeClock_LogIn.png" />
