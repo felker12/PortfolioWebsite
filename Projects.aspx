@@ -6,7 +6,7 @@
         
         <div class="row g-3">
             <!-- RPG Game Development -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card project-card h-100">
                     <asp:Image ID="Project2Image" runat="server" CssClass="card-img-top" ImageUrl="~/Content/GameSample.png" AlternateText="RPG Game Development" />
                     <div class="card-body p-3">
@@ -25,7 +25,7 @@
             </div>
 
             <!-- Portfolio Creator -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card project-card h-100">
                     <asp:Image ID="Image1" runat="server" CssClass="card-img-top" ImageUrl="~/Content/PortfolioCreator.png" AlternateText="Porftolio Creator" />
                     <div class="card-body p-3">
@@ -48,7 +48,7 @@
             </div>
 
             <!-- Time Punch Application -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card project-card h-100">
                     <asp:Image ID="Project3Image" runat="server" CssClass="card-img-top" ImageUrl="~/Content/TimeClock_LogIn.png" AlternateText="Time Punch Application" />
                     <div class="card-body p-3">
@@ -67,7 +67,7 @@
             </div>
 
             <!-- Web Application Development -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="card project-card h-100">
                     <div class="card-body p-3">
                         <h5 class="card-title mb-2">Web Application Development</h5>
