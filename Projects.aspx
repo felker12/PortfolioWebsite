@@ -33,7 +33,7 @@
                         <p class="card-text mb-2">Designed and built a full-stack portfolio creation tool using .NET Aspire's cloud-native architecture and a React front-end, generating ready-to-use HTML files for easy deployment.</p>
                         <div class="tech-stack mb-2">
                             <span class="badge bg-primary">C#</span>
-                            <span class="badge bg-secondary">.Net Aspire</span>
+                            <span class="badge bg-secondary">.NET Aspire</span>
                             <span class="badge bg-success">React</span>
                             <span class="badge bg-info">Azure</span>
                             <span class="badge bg-secondary">HTML/CSS</span>
